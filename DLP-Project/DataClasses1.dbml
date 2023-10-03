@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dlpoptical" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=CRUIZWELL-C\SQLEXPRESS;Initial Catalog=dlpoptical;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dlpopticalConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.employees" Member="employees">
+    <Type Name="employee">
+      <Column Name="empID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="empName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="empMiddleName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="empLastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="empBday" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="create_at" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="employee_user" Member="users" ThisKey="empID" OtherKey="empID" Type="user" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="empID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Userpass" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="employee_user" Member="employee" ThisKey="empID" OtherKey="empID" Type="employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
