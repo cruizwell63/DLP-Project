@@ -1,4 +1,10 @@
-﻿body {
+﻿@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -21,4 +27,32 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*.navbar-header {
+    background-color: #0047ab;
+}
+
+.container {
+    background-color: #0047ab;
+}*/
+.navbar {
+    background-color: #2a52be;
+}
+
+.navbar-header span{
+    color : #ffffff;
+    background : none;
+    font-size : 35px;
+    text-align :left;
+}
+
+.navbar-header a:hover{
+    background : none;
+    text-decoration: none;
+}
+
+.navbar-btn {
+    margin-top : 20px;
+    text-align : right;
 }

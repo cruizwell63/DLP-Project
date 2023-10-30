@@ -26,5 +26,10 @@ namespace DLP_Project.Controllers
 
             return View();
         }
+
+        public ActionResult HomePage() {
+
+            return View();
+        }
     }
 }
